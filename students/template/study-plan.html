@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Plans - AI Student Assessment System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/main.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">AI Student Assessment</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="study-plan.html">Study Plans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="forum.html">Discussion Forum</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mt-4">
+        <!-- Study Plan Header -->
+        <section class="text-center mb-4">
+            <h1 class="display-5">Personalized Study Plans</h1>
+            <p class="lead">AI-generated study plans tailored to your learning needs</p>
+        </section>
+
+        <!-- Subject Tabs -->
+        <section class="mb-4">
+            <ul class="nav nav-pills nav-fill mb-4" id="subjectTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="physics-tab" data-bs-toggle="pill" data-bs-target="#physics" type="button" role="tab">
+                        <i class="fas fa-atom me-2"></i> Physics
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="biology-tab" data-bs-toggle="pill" data-bs-target="#biology" type="button" role="tab">
+                        <i class="fas fa-dna me-2"></i> Biology
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="chemistry-tab" data-bs-toggle="pill" data-bs-target="#chemistry" type="button" role="tab">
+                        <i class="fas fa-flask me-2"></i> Chemistry
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="mathematics-tab" data-bs-toggle="pill" data-bs-target="#mathematics" type="button" role="tab">
+                        <i class="fas fa-square-root-alt me-2"></i> Mathematics
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="subjectTabContent">
+                <!-- Physics Tab -->
+                <div class="tab-pane fade show active" id="physics" role="tabpanel">
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="mb-0">Physics Study Plan</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4>Weekly Goals</h4>
+                                <span class="badge bg-success">85% Complete</span>
+                            </div>
+
+                            <!-- Weekly Plan -->
+                            <div class="accordion mb-4" id="physicsAccordion">
+                                <!-- Week 1 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#physicsWeek1">
+                                            Week 1: Mechanics Fundamentals
+                                        </button>
+                                    </h2>
+                                    <div id="physicsWeek1" class="accordion-collapse collapse show" data-bs-parent="#physicsAccordion">
+                                        <div class="accordion-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <h5 class="mb-1">Newton's Laws of Motion</h5>
+                                                        <p class="mb-0 text-muted">Review all three laws with practical examples</p>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" checked>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <h5 class="mb-1">Kinematics Equations</h5>
+                                                        <p class="mb-0 text-muted">Practice problems with velocity and acceleration</p>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" checked>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <h5 class="mb-1">Circular Motion</h5>
+                                                        <p class="mb-0 text-muted">Understand centripetal force and acceleration</p>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Week 2 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#physicsWeek2">
+                                            Week 2: Electromagnetism
+                                        </button>
+                                    </h2>
+                                    <div id="physicsWeek2" class="accordion-collapse collapse" data-bs-parent="#physicsAccordion">
+                                        <div class="accordion-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <h5 class="mb-1">Electric Fields</h5>
+                                                        <p class="mb-0 text-muted">Study electric field lines and Coulomb's law</p>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Biology Tab -->
+                <div class="tab-pane fade" id="biology" role="tabpanel">
+                    <div class="card mb-4">
+                        <div class="card-header bg-success text-white">
+                            <h3 class="mb-0">Biology Study Plan</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="lead text-center">Your personalized biology study plan is being generated.</p>
+                            <div class="text-center py-4">
+                                <div class="spinner-border text-success" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chemistry Tab -->
+                <div class="tab-pane fade" id="chemistry" role="tabpanel">
+                    <div class="card mb-4">
+                        <div class="card-header bg-danger text-white">
+                            <h3 class="mb-0">Chemistry Study Plan</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="lead text-center">Your personalized chemistry study plan is being generated.</p>
+                            <div class="text-center py-4">
+                                <div class="spinner-border text-danger" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mathematics Tab -->
+                <div class="tab-pane fade" id="mathematics" role="tabpanel">
+                    <div class="card mb-4">
+                        <div class="card-header bg-info text-white">
+                            <h3 class="mb-0">Mathematics Study Plan</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="lead text-center">Your personalized mathematics study plan is being generated.</p>
+                            <div class="text-center py-4">
+                                <div class="spinner-border text-info" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2023 AI Student Assessment System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./scripts/main.js"></script>
+</body>
+</html>

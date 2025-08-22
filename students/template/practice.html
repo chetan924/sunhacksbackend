@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Questions - AI Student Assessment System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/main.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">AI Student Assessment</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="study-plan.html">Study Plans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="forum.html">Discussion Forum</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mt-4">
+        <!-- Practice Header -->
+        <section class="text-center mb-4">
+            <h1 class="display-5"><span id="subjectTitle">Physics</span> Practice Questions</h1>
+            <p class="lead">Strengthen your understanding with topic-wise practice problems</p>
+        </section>
+
+        <!-- Topic Selection -->
+        <section class="mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Select Topic</h5>
+                    <div class="d-flex flex-wrap gap-2 mt-3">
+                        <button class="btn btn-outline-primary active">All Topics</button>
+                        <button class="btn btn-outline-primary">Mechanics</button>
+                        <button class="btn btn-outline-primary">Thermodynamics</button>
+                        <button class="btn btn-outline-primary">Electromagnetism</button>
+                        <button class="btn btn-outline-primary">Optics</button>
+                        <button class="btn btn-outline-primary">Modern Physics</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Difficulty Selection -->
+        <section class="mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Difficulty Level</h5>
+                    <div class="d-flex flex-wrap gap-2 mt-3">
+                        <button class="btn btn-outline-success">Easy</button>
+                        <button class="btn btn-outline-warning active">Medium</button>
+                        <button class="btn btn-outline-danger">Hard</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Questions -->
+        <section class="mb-5">
+            <div class="row">
+                <!-- Question 1 -->
+                <div class="col-12 mb-4">
+                    <div class="card practice-question">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <span class="badge bg-warning">Medium</span>
+                            <span class="badge bg-primary">Mechanics</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Question 1</h5>
+                            <p class="card-text">A ball is thrown vertically upward with an initial velocity of 20 m/s. Neglecting air resistance, what is the maximum height reached by the ball? (Take g = 10 m/s²)</p>
+                            <div class="mt-3">
+                                <button class="btn btn-outline-primary btn-sm me-2" data-bs-toggle="collapse" data-bs-target="#hint1">Show Hint</button>
+                                <button class="btn btn-outline-success btn-sm" data-bs-toggle="collapse" data-bs-target="#solution1">Show Solution</button>
+                            </div>
+                            <div class="collapse mt-3" id="hint1">
+                                <div class="card card-body bg-light">
+                                    <p class="mb-0">Use the equation v² = u² + 2as, where v is the final velocity (which is zero at maximum height).</p>
+                                </div>
+                            </div>
+                            <div class="collapse mt-3" id="solution1">
+                                <div class="card card-body bg-light">
+                                    <p>At maximum height, the velocity becomes zero.</p>
+                                    <p>Using v² = u² + 2as</p>
+                                    <p>0 = (20)² + 2(-10)s</p>
+                                    <p>s = 20 meters</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 2 -->
+                <div class="col-12 mb-4">
+                    <div class="card practice-question">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <span class="badge bg-warning">Medium</span>
+                            <span class="badge bg-primary">Thermodynamics</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Question 2</h5>
+                            <p class="card-text">A heat engine operates between temperatures of 500 K and 300 K. What is the maximum possible efficiency of this engine?</p>
+                            <div class="mt-3">
+                                <button class="btn btn-outline-primary btn-sm me-2" data-bs-toggle="collapse" data-bs-target="#hint2">Show Hint</button>
+                                <button class="btn btn-outline-success btn-sm" data-bs-toggle="collapse" data-bs-target="#solution2">Show Solution</button>
+                            </div>
+                            <div class="collapse mt-3" id="hint2">
+                                <div class="card card-body bg-light">
+                                    <p class="mb-0">Use the Carnot efficiency formula: η = 1 - T₂/T₁, where T₁ is the hot reservoir temperature and T₂ is the cold reservoir temperature.</p>
+                                </div>
+                            </div>
+                            <div class="collapse mt-3" id="solution2">
+                                <div class="card card-body bg-light">
+                                    <p>Maximum efficiency (Carnot efficiency) = 1 - T₂/T₁</p>
+                                    <p>η = 1 - 300/500</p>
+                                    <p>η = 1 - 0.6</p>
+                                    <p>η = 0.4 or 40%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 3 -->
+                <div class="col-12 mb-4">
+                    <div class="card practice-question">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <span class="badge bg-warning">Medium</span>
+                            <span class="badge bg-primary">Electromagnetism</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Question 3</h5>
+                            <p class="card-text">A wire of length 2 meters carries a current of 5 amperes. If the wire is placed in a uniform magnetic field of 0.5 tesla at an angle of 30° to the field, what is the magnitude of the force experienced by the wire?</p>
+                            <div class="mt-3">
+                                <button class="btn btn-outline-primary btn-sm me-2" data-bs-toggle="collapse" data-bs-target="#hint3">Show Hint</button>
+                                <button class="btn btn-outline-success btn-sm" data-bs-toggle="collapse" data-bs-target="#solution3">Show Solution</button>
+                            </div>
+                            <div class="collapse mt-3" id="hint3">
+                                <div class="card card-body bg-light">
+                                    <p class="mb-0">Use the formula F = ILB sin θ, where I is the current, L is the length, B is the magnetic field, and θ is the angle between the wire and the field.</p>
+                                </div>
+                            </div>
+                            <div class="collapse mt-3" id="solution3">
+                                <div class="card card-body bg-light">
+                                    <p>F = ILB sin θ</p>
+                                    <p>F = 5 × 2 × 0.5 × sin(30°)</p>
+                                    <p>F = 5 × 2 × 0.5 × 0.5</p>
+                                    <p>F = 2.5 newtons</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center mt-4">
+                <button class="btn btn-primary">Load More Questions</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2023 AI Student Assessment System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./scripts/main.js"></script>
+</body>
+</html>

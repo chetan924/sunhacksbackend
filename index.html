@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Student Assessment System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/main.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">AI Student Assessment</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="study-plan.html">Study Plans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="forum.html">Discussion Forum</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mt-4">
+        <!-- Welcome Section -->
+        <section class="text-center mb-5">
+            <h1 class="display-4">Welcome to AI-Powered Student Assessment</h1>
+            <p class="lead">Personalized learning experience to help you excel in your studies</p>
+        </section>
+
+        <!-- Class Selection Section -->
+        <section class="mb-5">
+            <h2 class="text-center mb-4">Select Your Class</h2>
+            <div class="row row-cols-2 row-cols-md-4 g-4 justify-content-center">
+                <!-- Classes 5-11 (Disabled) -->
+                <div class="col">
+                    <div class="card h-100 class-card disabled">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Class 5</h3>
+                            <p class="card-text">Coming Soon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 class-card disabled">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Class 6</h3>
+                            <p class="card-text">Coming Soon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 class-card disabled">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Class 7</h3>
+                            <p class="card-text">Coming Soon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 class-card disabled">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Class 8</h3>
+                            <p class="card-text">Coming Soon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 class-card disabled">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Class 9</h3>
+                            <p class="card-text">Coming Soon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 class-card disabled">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Class 10</h3>
+                            <p class="card-text">Coming Soon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 class-card disabled">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Class 11</h3>
+                            <p class="card-text">Coming Soon</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Class 12 (Selectable) -->
+                <div class="col">
+                    <div class="card h-100 class-card active" id="class12Card">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Class 12</h3>
+                            <p class="card-text">Click to select</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subject Selection Section (Hidden initially) -->
+        <section id="subjectSelection" class="mb-5 d-none">
+            <h2 class="text-center mb-4">Select Your Subject</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <!-- Physics -->
+                <div class="col">
+                    <div class="card h-100 subject-card" data-subject="physics">
+                        <div class="card-body text-center">
+                            <i class="fas fa-atom fa-3x mb-3 text-primary"></i>
+                            <h3 class="card-title">Physics</h3>
+                            <p class="card-text">Mechanics, Thermodynamics, Electromagnetism, and more</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Biology -->
+                <div class="col">
+                    <div class="card h-100 subject-card" data-subject="biology">
+                        <div class="card-body text-center">
+                            <i class="fas fa-dna fa-3x mb-3 text-success"></i>
+                            <h3 class="card-title">Biology</h3>
+                            <p class="card-text">Genetics, Ecology, Human Physiology, and more</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Chemistry -->
+                <div class="col">
+                    <div class="card h-100 subject-card" data-subject="chemistry">
+                        <div class="card-body text-center">
+                            <i class="fas fa-flask fa-3x mb-3 text-danger"></i>
+                            <h3 class="card-title">Chemistry</h3>
+                            <p class="card-text">Organic, Inorganic, Physical Chemistry, and more</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mathematics -->
+                <div class="col">
+                    <div class="card h-100 subject-card" data-subject="mathematics">
+                        <div class="card-body text-center">
+                            <i class="fas fa-square-root-alt fa-3x mb-3 text-info"></i>
+                            <h3 class="card-title">Mathematics</h3>
+                            <p class="card-text">Calculus, Algebra, Probability, and more</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="mb-5">
+            <h2 class="text-center mb-4">Key Features</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-brain fa-3x mb-3 text-primary"></i>
+                            <h3 class="card-title">Adaptive Learning</h3>
+                            <p class="card-text">AI-powered quizzes that adapt to your skill level</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-chart-line fa-3x mb-3 text-success"></i>
+                            <h3 class="card-title">Progress Tracking</h3>
+                            <p class="card-text">Visualize your improvement with detailed analytics</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-robot fa-3x mb-3 text-info"></i>
+                            <h3 class="card-title">AI Chatbot Mentor</h3>
+                            <p class="card-text">Get instant help from our AI tutor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2023 AI Student Assessment System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./scripts/main.js"></script>
+</body>
+</html>

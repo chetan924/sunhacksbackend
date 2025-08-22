@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Lectures - AI Student Assessment System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/main.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- YouTube API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Video Data -->
+    <script src="./scripts/video-data.js"></script>
+    <!-- Custom JS for Lectures Page -->
+    <script src="./scripts/lectures.js"></script>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">AI Student Assessment</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="study-plan.html">Study Plans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="forum.html">Discussion Forum</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mt-4">
+        <!-- Lectures Header -->
+        <section class="text-center mb-4">
+            <h1 class="display-5"><span id="subjectTitle">Physics</span> Video Lectures</h1>
+            <p class="lead">Learn from expert educators with our curated video content</p>
+        </section>
+
+        <!-- Topic Filter -->
+        <section class="mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Filter by Topic</h5>
+                    <div class="d-flex flex-wrap gap-2 mt-3" id="topicFilters">
+                        <!-- Topic filters will be dynamically populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- YouTube Playlist Embed -->
+        <section class="mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Complete Playlist</h5>
+                    <p class="card-text">Watch the complete playlist or browse individual videos below.</p>
+                    <div class="ratio ratio-16x9" id="playlistContainer">
+                        <!-- Playlist iframe will be dynamically populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Lectures Grid -->
+        <section class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5" id="videoGrid">
+            <!-- Video cards will be dynamically populated by JavaScript -->
+        </section>tics</h5>
+                        <p class="card-text">Understanding reflection, refraction, and optical instruments.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-primary">Optics</span>
+                            <span class="text-muted">Physics Wallah</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Video 9 -->
+            <div class="col video-item" data-topic="modern-physics">
+                <div class="card h-100 video-card" onclick="window.open('https://www.youtube.com/watch?v=Oo8TWAcKCsM&list=PLNWoEZAZrFzNOdMEeavC2U23fGKOgQlJz&si=xuBWTDfkdcgWzt7X&index=9', '_blank')">
+                    <div class="ratio ratio-16x9">
+                        <img src="https://img.youtube.com/vi/Oo8TWAcKCsM/maxresdefault.jpg" class="card-img-top" alt="Quantum Physics Video Thumbnail">
+                        <div class="video-play-button">
+                            <i class="fas fa-play-circle fa-3x"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Quantum Physics</h5>
+                        <p class="card-text">Introduction to quantum mechanics and wave-particle duality.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-primary">Modern Physics</span>
+                            <span class="text-muted">Physics Wallah</span>
+                        </div>
+                    </div>
+                </div>
+            </div>

@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../core"
+		},
+		{
+			"path": "../forum"
+		},
+		{
+			"path": "../Prgyan"
+		},
+		{
+			"path": "../students"
+		},
+		{
+			"path": "../studyplans"
+		},
+		{
+			"path": "../users"
+		},
+		{
+			"path": "../videos"
+		}
+	]
+}

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AI Student Assessment System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/main.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">AI Student Assessment</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="study-plan.html">Study Plans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="forum.html">Discussion Forum</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mt-4">
+        <!-- Dashboard Header -->
+        <section class="text-center mb-4">
+            <h1 class="display-5">Student Dashboard</h1>
+            <p class="lead">Track your progress and view personalized recommendations</p>
+        </section>
+
+        <!-- Performance Overview -->
+        <section class="row mb-4">
+            <div class="col-12">
+                <div class="dashboard-card">
+                    <h2 class="mb-3">Performance Overview</h2>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <canvas id="performanceChart" height="250"></canvas>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="d-flex flex-column justify-content-center h-100">
+                                <div class="text-center mb-3">
+                                    <h3 class="mb-0">Overall Score</h3>
+                                    <div class="display-4 text-primary">78%</div>
+                                </div>
+                                <div class="text-center">
+                                    <h3 class="mb-0">Quizzes Completed</h3>
+                                    <div class="display-4 text-success">12</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subject Progress -->
+        <section class="row mb-4">
+            <div class="col-12">
+                <div class="dashboard-card">
+                    <h2 class="mb-3">Subject Progress</h2>
+                    <div class="row">
+                        <!-- Physics Progress -->
+                        <div class="col-md-6 mb-3">
+                            <div class="progress-container">
+                                <div class="progress-label">
+                                    <span><i class="fas fa-atom me-2 text-primary"></i> Physics</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 85%; background-color: var(--primary-color);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Biology Progress -->
+                        <div class="col-md-6 mb-3">
+                            <div class="progress-container">
+                                <div class="progress-label">
+                                    <span><i class="fas fa-dna me-2 text-success"></i> Biology</span>
+                                    <span>72%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 72%; background-color: var(--success-color);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Chemistry Progress -->
+                        <div class="col-md-6 mb-3">
+                            <div class="progress-container">
+                                <div class="progress-label">
+                                    <span><i class="fas fa-flask me-2 text-danger"></i> Chemistry</span>
+                                    <span>68%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 68%; background-color: var(--danger-color);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mathematics Progress -->
+                        <div class="col-md-6 mb-3">
+                            <div class="progress-container">
+                                <div class="progress-label">
+                                    <span><i class="fas fa-square-root-alt me-2 text-info"></i> Mathematics</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 90%; background-color: var(--info-color);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strengths and Weaknesses -->
+        <section class="row mb-4">
+            <div class="col-md-6 mb-3">
+                <div class="dashboard-card h-100">
+                    <h2 class="mb-3">Strengths</h2>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <div>
+                                <h5 class="mb-1">Mechanics (Physics)</h5>
+                                <p class="mb-0 text-muted">Excellent understanding of Newton's laws and kinematics</p>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <div>
+                                <h5 class="mb-1">Calculus (Mathematics)</h5>
+                                <p class="mb-0 text-muted">Strong skills in differentiation and integration</p>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <div>
+                                <h5 class="mb-1">Genetics (Biology)</h5>
+                                <p class="mb-0 text-muted">Good grasp of Mendelian inheritance patterns</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="dashboard-card h-100">
+                    <h2 class="mb-3">Areas for Improvement</h2>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fas fa-exclamation-circle text-warning me-2"></i>
+                            <div>
+                                <h5 class="mb-1">Organic Chemistry</h5>
+                                <p class="mb-0 text-muted">Need more practice with reaction mechanisms</p>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fas fa-exclamation-circle text-warning me-2"></i>
+                            <div>
+                                <h5 class="mb-1">Electromagnetism (Physics)</h5>
+                                <p class="mb-0 text-muted">Review concepts of electric fields and potential</p>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fas fa-exclamation-circle text-warning me-2"></i>
+                            <div>
+                                <h5 class="mb-1">Probability (Mathematics)</h5>
+                                <p class="mb-0 text-muted">Work on conditional probability problems</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommended Resources -->
+        <section class="row mb-4">
+            <div class="col-12">
+                <div class="dashboard-card">
+                    <h2 class="mb-3">AI-Recommended Resources</h2>
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <!-- Video Resource -->
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-video text-danger me-2"></i> Video Tutorial</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Organic Chemistry Basics</h6>
+                                    <p class="card-text">A comprehensive guide to understanding reaction mechanisms in organic chemistry.</p>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Watch Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Article Resource -->
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-file-alt text-info me-2"></i> Article</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Electromagnetism Explained</h6>
+                                    <p class="card-text">Clear explanations of electric fields, magnetic fields, and their interactions.</p>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Read Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Practice Problems -->
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-tasks text-success me-2"></i> Practice Problems</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Probability Mastery</h6>
+                                    <p class="card-text">A set of 50 practice problems on conditional probability with step-by-step solutions.</p>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Start Practice</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <section class="row mb-4">
+            <div class="col-12">
+                <div class="dashboard-card">
+                    <h2 class="mb-3">Achievements & Badges</h2>
+                    <div class="badge-container">
+                        <!-- Unlocked Badges -->
+                        <div class="badge-item">
+                            <div class="badge-icon text-primary">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="badge-name">First Quiz</div>
+                        </div>
+                        <div class="badge-item">
+                            <div class="badge-icon text-success">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="badge-name">Perfect Score</div>
+                        </div>
+                        <div class="badge-item">
+                            <div class="badge-icon text-warning">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="badge-name">Speed Demon</div>
+                        </div>
+                        <div class="badge-item">
+                            <div class="badge-icon text-info">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="badge-name">7-Day Streak</div>
+                        </div>
+                        <!-- Locked Badges -->
+                        <div class="badge-item locked">
+                            <div class="badge-icon text-secondary">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <div class="badge-name">Master</div>
+                        </div>
+                        <div class="badge-item locked">
+                            <div class="badge-icon text-secondary">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="badge-name">All Subjects</div>
+                        </div>
+                        <div class="badge-item locked">
+                            <div class="badge-icon text-secondary">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="badge-name">30-Day Streak</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Chatbot -->
+        <section class="row mb-4">
+            <div class="col-12">
+                <div class="dashboard-card">
+                    <h2 class="mb-3">AI Study Mentor</h2>
+                    <div class="chat-container">
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="message message-bot">
+                                Hello! I'm your AI study mentor. How can I help you today?
+                            </div>
+                            <div class="message message-user">
+                                I'm having trouble with organic chemistry reaction mechanisms.
+                            </div>
+                            <div class="message message-bot">
+                                I understand that organic chemistry reaction mechanisms can be challenging. Let's break it down step by step. Would you like me to explain the basics of nucleophilic substitution reactions first?
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" class="form-control" placeholder="Type your question here...">
+                            <button class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./scripts/main.js"></script>
+    
+    <!-- Chart.js Initialization -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize performance chart
+            const performanceChart = document.getElementById('performanceChart');
+            if (performanceChart) {
+                new Chart(performanceChart, {
+                    type: 'line',
+                    data: {
+                        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+                        datasets: [
+                            {
+                                label: 'Physics',
+                                data: [65, 72, 78, 75, 82, 85],
+                                borderColor: '#4361ee',
+                                backgroundColor: 'rgba(67, 97, 238, 0.1)',
+                                tension: 0.3,
+                                fill: true
+                            },
+                            {
+                                label: 'Biology',
+                                data: [58, 65, 70, 68, 72, 72],
+                                borderColor: '#4cc9f0',
+                                backgroundColor: 'rgba(76, 201, 240, 0.1)',
+                                tension: 0.3,
+                                fill: true
+                            },
+                            {
+                                label: 'Chemistry',
+                                data: [50, 55, 60, 62, 65, 68],
+                                borderColor: '#f72585',
+                                backgroundColor: 'rgba(247, 37, 133, 0.1)',
+                                tension: 0.3,
+                                fill: true
+                            },
+                            {
+                                label: 'Mathematics',
+                                data: [75, 80, 82, 85, 88, 90],
+                                borderColor: '#4895ef',
+                                backgroundColor: 'rgba(72, 149, 239, 0.1)',
+                                tension: 0.3,
+                                fill: true
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 100,
+                                title: {
+                                    display: true,
+                                    text: 'Score (%)'
+                                }
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Time Period'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Add event listener for chat input
+            const chatInput = document.querySelector('.chat-input input');
+            const chatButton = document.querySelector('.chat-input button');
+            const chatMessages = document.getElementById('chatMessages');
+            
+            if (chatInput && chatButton && chatMessages) {
+                chatButton.addEventListener('click', sendMessage);
+                chatInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+                
+                function sendMessage() {
+                    const message = chatInput.value.trim();
+                    if (message) {
+                        // Add user message
+                        const userMessage = document.createElement('div');
+                        userMessage.className = 'message message-user';
+                        userMessage.textContent = message;
+                        chatMessages.appendChild(userMessage);
+                        
+                        // Clear input
+                        chatInput.value = '';
+                        
+                        // Scroll to bottom
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                        
+                        // Simulate AI response (in a real app, this would be an API call)
+                        setTimeout(function() {
+                            const botMessage = document.createElement('div');
+                            botMessage.className = 'message message-bot';
+                            botMessage.textContent = 'I understand your question about ' + message.toLowerCase() + '. Let me provide some helpful resources and explanations to assist you with this topic.';
+                            chatMessages.appendChild(botMessage);
+                            
+                            // Scroll to bottom
+                            chatMessages.scrollTop = chatMessages.scrollHeight;
+                        }, 1000);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
